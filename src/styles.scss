@@ -1,1 +1,51 @@
-/* You can add global styles to this file, and also import other style files */
+// $black-0: #cccccc;
+// $black-100: #bbbbbb;
+// $black-200: #aaaaaa;
+// $black-300: #999999;
+// $black-400: #666666;
+// $black-500: #333333;
+$black-container: #292929;
+// $black-700: #1f1f1f;
+$black-ligth: #1A1A1A;
+$black: #151515;
+$black-dark: #101010;
+
+$text: #f6f6f6;
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+
+    color: ligth;
+
+  animation: moverDerechaIzquierda 5s linear infinite;
+  background-color: $black-dark;
+  background-image: linear-gradient(30deg, $black 12%, transparent 12.5%, transparent 87%, $black 87.5%, $black),
+  linear-gradient(150deg, $black 12%, transparent 12.5%, transparent 87%, $black 87.5%, $black),
+  linear-gradient(30deg, $black 12%, transparent 12.5%, transparent 87%, $black 87.5%, $black),
+  linear-gradient(150deg, $black 12%, transparent 12.5%, transparent 87%, $black 87.5%, $black),
+  linear-gradient(60deg, $black-ligth 25%, transparent 25.5%, transparent 75%, $black-ligth 75%, $black-ligth),
+  linear-gradient(60deg, $black-ligth 25%, transparent 25.5%, transparent 75%, $black-ligth 75%, $black-ligth);
+  background-size:80px 140px;
+  background-position: 0 0, 0 0, 40px 70px, 40px 70px, 0 0, 40px 70px;
+}
+
+@keyframes moverDerechaIzquierda {
+  0% {
+    background-position: 0 0, 0 0, 40px 70px, 40px 70px, 0 0, 40px 70px;
+  }
+  100% {
+    background-position: 80px 0, 80px 0, 120px 70px, 120px 70px, 80px 0, 120px 70px;
+  }
+}
+
+.btn {
+    color: $text !important;
+}
+
+.card {
+    background-color: $black-container !important;
+    color: $text !important;
+}
