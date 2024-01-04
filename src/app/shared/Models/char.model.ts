@@ -1,11 +1,13 @@
 export interface Char {
     id?: number;
-    value: string;
+    text: string;
     special: boolean;
+    value: string;
 }
 
-export interface Element {
+export interface Word {
     id?: number;
-    pronunciation: string;
-    char: Char;
+    meanings: string[];
+    type: string;
+    chars: Char[];
 }

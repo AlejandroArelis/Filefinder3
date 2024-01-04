@@ -1,9 +1,9 @@
-// $black-0: #cccccc;
+$gray-light: #cccccc;
 // $black-100: #bbbbbb;
 // $black-200: #aaaaaa;
 // $black-300: #999999;
-// $black-400: #666666;
-// $black-500: #333333;
+$gray: #666666;
+// $gray: #333333;
 $black-container: #292929;
 // $black-700: #1f1f1f;
 $black-ligth: #1A1A1A;
@@ -63,4 +63,13 @@ body {
     object-fit: contain;
     position: absolute;
   }
+}
+
+.tag {
+  background-color: $gray;
+  color: $gray-light;
+  border-radius: 10px;
+  margin-right: 5px;
+  margin-top: 5px;
+  padding: 3px 5px;
 }

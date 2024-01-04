@@ -1,14 +1,15 @@
-import { Component, Input} from '@angular/core';
-import { Element } from '../../Models/char.model';
+import { Component, Input } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { Char } from '../../Models/char.model';
 
 @Component({
   selector: 'char',
   standalone: true,
-  imports: [],
-  templateUrl: './char.component.html'
+  imports: [CommonModule],
+  templateUrl: './char.component.html',
 })
 export class CharComponent {
+  @Input() char!: Char;
 
-  @Input() element!:Element;
-
+  kana = false;
 }
