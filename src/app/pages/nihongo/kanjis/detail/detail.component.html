@@ -2,24 +2,36 @@
   <div class="card-body">
     <div class="row g-2">
       <div class="kanji-container col-3">
-        <img src="assets/img/kanji/食.png" alt="" />
+        <img [src]="kanji.img" alt="" />
       </div>
       <div class="col-9">
-        <h1 style="font-weight: bold">しょく</h1>
+        <h1 style="font-weight: bold">{{kanji.name}}</h1>
         <hr />
         <div class="row g-2">
           <div class="col-6">
-            <p><label style="font-weight: bold">Kun:</label> く, た</p>
-            <p><label style="font-weight: bold">On:</label> ショク, ジキ</p>
             <p>
-              <label style="font-weight: bold">Significado:</label> Comer,
-              Comida
+              <label class="me-1" style="font-weight: bold">Kun:</label>
+              @for (kun of kanji.kun; track $index) {
+                <label class="tag">{{kun}}</label>
+              }
+            </p>
+            <p>
+              <label class="me-1" style="font-weight: bold">On:</label>
+              @for (on of kanji.on; track $index) {
+                <label class="tag">{{on}}</label>
+              }
+            </p>
+            <p>
+              <label class="me-1" style="font-weight: bold">Significado:</label>
+              @for (meaning of kanji.meanings; track $index) {
+                <label class="tag">{{meaning}}</label>
+              }
             </p>
           </div>
           <div class="col-6">
             <label style="font-weight: bold">Ejemplos:</label>
             <ul>
-              @for (word of words; track word.id) {
+              @for (word of kanji.examples; track word.id) {
                 <li>
                   <p>
                     @for (char of word.chars; track char.id) {

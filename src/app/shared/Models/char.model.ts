@@ -1,8 +1,8 @@
 export interface Char {
     id?: number;
     text: string;
-    special: boolean;
-    value: string;
+    special?: boolean;
+    value?: string;
 }
 
 export interface Word {
