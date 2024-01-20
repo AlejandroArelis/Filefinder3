@@ -3,30 +3,32 @@ import { Routes } from '@angular/router';
 export const routes: Routes = [
     {
         path: "",
-        loadComponent: () => import("./pages/home/home.component").then(m => m.HomeComponent)
+        loadComponent: () => import("./pages/home/home.component")
     },
     {
         path: "nihongo",
-        loadComponent: () => import("./pages/nihongo/nihongo.component").then(c => c.NihongoComponent),
+        loadComponent: () => import("./pages/nihongo/nihongo.component"),
         children: [{
             path: "kanjis",
-            loadComponent: () => import("./pages/nihongo/kanjis/kanjis.component").then(c => c.KanjisComponent)
+            loadComponent: () => import("./pages/nihongo/kanjis/kanjis.component")
         }, {
             path: "kanji/:id",
-            loadComponent: () => import("./pages/nihongo/kanjis/detail/detail.component").then(c => c.DetailComponent)
+            loadComponent: () => import("./pages/nihongo/kanjis/detail/detail.component")
         }, {
             path: "verbs",
-            loadComponent: () => import("./pages/nihongo/verbs/verbs.component").then(c => c.VerbsComponent)
+            loadComponent: () => import("./pages/nihongo/verbs/verbs.component")
         }, {
             path: "nouns",
-            loadComponent: () => import("./pages/nihongo/nouns/nouns.component").then(c => c.NounsComponent)
+            loadComponent: () => import("./pages/nihongo/nouns/nouns.component")
         }, {
-            path: "**",
-            redirectTo: "kanjis"
+            path: "",
+            redirectTo: "kanjis",
+            pathMatch: "full"
         }]
     },
-    {
-        path: "**",
-        redirectTo: "/"
-    }
+    // {
+    //     path: "",
+    //     redirectTo: "nihongo",
+    //     pathMatch: "full"
+    // }
 ];
