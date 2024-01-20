@@ -1,13 +1,6 @@
-export interface Char {
-    id?: number;
+export type Char = {
+    id: number;
     text: string;
-    special?: boolean;
-    value?: string;
-}
-
-export interface Word {
-    id?: number;
-    meanings: string[];
-    type: string;
-    chars: Char[];
+    special: boolean;
+    value: string;
 }

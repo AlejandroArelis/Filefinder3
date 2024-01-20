@@ -1,11 +1,13 @@
-import { Word } from "./char.model";
+import { Word } from "./word.model";
 
-export interface Kanji {
-  id?: number;
-  name: string;
+export type Kanji = {
+  id: number;
+  name: string[];
   kun: string[];
   on: string[];
   meanings: string[];
-  img: string;
-  examples?: Word[];
+  image: string;
+  learned: boolean;
+  level: number;
+  examples: Word[];
 }
