@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { Word } from '../../../../shared/Models/char.model';
 import { CommonModule } from '@angular/common';
 import { CharComponent } from '../../../../shared/components/char/char.component';
 import { Kanji } from '../../../../shared/Models/kanji.model';

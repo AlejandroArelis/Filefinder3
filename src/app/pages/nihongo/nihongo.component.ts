@@ -13,7 +13,7 @@ import { Navbar } from '../../shared/Models/navbar.model';
   styles: ``
 })
 export default class NihongoComponent {
-  config:Navbar = {
+  config: Navbar = {
     title: "Nihongo",
     return: true,
     routes: [{
