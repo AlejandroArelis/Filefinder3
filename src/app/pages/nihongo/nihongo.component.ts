@@ -12,7 +12,7 @@ import { Navbar } from '../../shared/Models/navbar.model';
   templateUrl: './nihongo.component.html',
   styles: ``
 })
-export class NihongoComponent {
+export default class NihongoComponent {
   config:Navbar = {
     title: "Nihongo",
     return: true,

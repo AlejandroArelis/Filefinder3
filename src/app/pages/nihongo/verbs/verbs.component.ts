@@ -7,6 +7,6 @@ import { Component } from '@angular/core';
   templateUrl: './verbs.component.html',
   styles: ``
 })
-export class VerbsComponent {
+export default class VerbsComponent {
 
 }

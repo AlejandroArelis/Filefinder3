@@ -10,14 +10,15 @@ import { Kanji } from '../../../../shared/Models/kanji.model';
   templateUrl: './detail.component.html',
   styles: ``
 })
-export class DetailComponent {
+export default class DetailComponent {
   kanji:Kanji = {
     id: 1,
-    name: "しょく",
+    names: ["しょく"],
     kun: ["く", "た"],
     on: ["ショク", "ジキ"],
     meanings: ["Comer", "Comida"],
     img: "http://localhost:4200/assets/img/kanji/食.png",
+    jlpt: 5,
     examples: [{
       id: 1,
       meanings: [

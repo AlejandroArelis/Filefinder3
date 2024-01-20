@@ -5,7 +5,14 @@
         <img [src]="kanji.img" alt="" />
       </div>
       <div class="col-9">
-        <h1 style="font-weight: bold">{{kanji.name}}</h1>
+        <h1 style="font-weight: bold">
+          @for (name of kanji.names; track kanji.id) {
+            <label>{{name}}</label>
+            @if (kanji.names && kanji.names.length > $index + 1 ) {
+              <label>, </label>
+            }
+          }
+        </h1>
         <hr />
         <div class="row g-2">
           <div class="col-6">
