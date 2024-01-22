@@ -1,14 +1,14 @@
 import { Word } from "./word.model";
 
-
-export interface Kanji {
-  id?: number;
-  char?: string;
+export type Kanji = {
+  id: number;
+  char: string;
   names?: string[];
   kun?: string[];
   on?: string[];
   meanings?: string[];
-  img?: string;
+  image?: string;
   jlpt?: number;
+  checked?: boolean;
   examples?: Word[];
 }
