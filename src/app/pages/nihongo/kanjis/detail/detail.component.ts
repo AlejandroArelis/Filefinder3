@@ -3,12 +3,13 @@ import { AsyncPipe, CommonModule } from '@angular/common';
 import { CharComponent } from '../../../../shared/components/char/char.component';
 import { Kanji } from '../../../../shared/Models/kanji.model';
 import { Subscription } from 'rxjs';
-import { KanjisService } from '../../../../shared/services/nihongo/kanjis.service';
+import { TagComponent } from '../../../../shared/components/tag/tag.component';
+import { KanjiService } from '../../../../shared/services/nihongo/kanji/kanji.service';
 
 
 @Component({
   standalone: true,
-  imports: [CommonModule, CharComponent, AsyncPipe],
+  imports: [CommonModule, CharComponent, AsyncPipe, TagComponent],
   templateUrl: './detail.component.html'
 })
 export default class DetailComponent implements OnInit, OnDestroy {
@@ -17,10 +18,10 @@ export default class DetailComponent implements OnInit, OnDestroy {
   kanji!: Kanji;
   kanjiSub: Subscription = new Subscription();
 
-  constructor(private _kanjisService: KanjisService) { }
+  constructor(private _kanjiService: KanjiService) { }
 
   ngOnInit(): void {
-    this.kanjiSub = this._kanjisService.getById(this.id).subscribe({
+    this.kanjiSub = this._kanjiService.getById(this.id).subscribe({
       next: (kanji: Kanji) => {
         this.kanji = kanji;
       }

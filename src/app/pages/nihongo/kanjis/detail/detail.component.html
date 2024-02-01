@@ -7,7 +7,7 @@
       <div class="col-9">
         <h1 style="font-weight: bold">
           @for (name of kanji.names; track kanji.id) {
-            <label>{{name}}</label>
+            <label>{{name.value}}</label>
             @if (kanji.names && kanji.names.length > $index + 1 ) {
               <label>, </label>
             }
@@ -18,24 +18,22 @@
           <div class="col-6">
             <p>
               <label class="me-1" style="font-weight: bold">Kun:</label>
-              @for (kun of kanji.kun; track $index) {
-                <label class="tag">{{kun}}</label>
-              }
+              <tag [data]="kanji.kun"></tag>
             </p>
             <p>
               <label class="me-1" style="font-weight: bold">On:</label>
               @for (on of kanji.on; track $index) {
-                <label class="tag">{{on}}</label>
+                <label class="tag">{{on.value}}</label>
               }
             </p>
-            <p>
+            <!-- <p>
               <label class="me-1" style="font-weight: bold">Significado:</label>
               @for (meaning of kanji.meanings; track $index) {
                 <label class="tag">{{meaning}}</label>
               }
-            </p>
+            </p> -->
           </div>
-          <div class="col-6">
+          <!-- <div class="col-6">
             <label style="font-weight: bold">Ejemplos:</label>
             <ul>
               @for (word of kanji.examples; track word.id) {
@@ -51,7 +49,7 @@
                 </li>
               }
             </ul>
-          </div>
+          </div> -->
         </div>
       </div>
     </div>

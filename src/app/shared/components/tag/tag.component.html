@@ -1,0 +1,9 @@
+@for (tag of data; track $index) {
+  <label class="tag">{{ tag.value }}</label>
+}
+
+@if (showInput) {
+  <input type="text" class="newTag" [(ngModel)]="newTag" (enter)="save()"/>
+}
+
+<label class="tag bg-success pointer" (click)="showInput = !showInput">+</label>
