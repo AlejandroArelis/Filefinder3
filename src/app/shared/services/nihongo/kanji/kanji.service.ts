@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Kanji } from '../../../Models/kanji.model';
+import { Kanji } from '../../../models/kanji.model';
 import { environment } from '../../../../../environments/environment.development';
 
 @Injectable({
@@ -8,7 +8,7 @@ import { environment } from '../../../../../environments/environment.development
 })
 export class KanjiService {
 
-  baseUrl = `${environment.apiUrl}/nihongo/Kanji`;
+  private baseUrl = `${environment.apiUrl}/nihongo/Kanji`;
 
   constructor(private _http: HttpClient) {}
 

@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Char } from '../../Models/char.model';
+import { Char } from '../../models/char.model';
 
 @Component({
   selector: 'char',

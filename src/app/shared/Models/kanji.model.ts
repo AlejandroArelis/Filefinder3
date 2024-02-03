@@ -1,20 +1,22 @@
-import { Word } from './word.model';
+import { Generic } from './generic.model';
+import { Example } from './example.model';
 
-export type Kanji = {
+export interface Kanji {
   id: number;
   char: string;
-  names: Item[];
-  kun: Item[];
-  on: Item[];
-  meanings?: Item[];
   image?: string;
   jlpt?: number;
   checked?: boolean;
-  examples?: Word[];
-};
+  successes?: number;
+  attempts?: number;
 
-export type Item = {
-  id?: number;
-  value?: string | number;
+  meanings?: Generic[];
+  names?: KanjiGeneric[];
+  kuns?: KanjiGeneric[];
+  ons?: KanjiGeneric[];
+  examples?: Example[];
+}
+
+export interface KanjiGeneric extends Generic {
   kanjiId?: number;
-};
+}

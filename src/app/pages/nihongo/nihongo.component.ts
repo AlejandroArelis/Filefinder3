@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 import { RouterModule, RouterOutlet } from '@angular/router';
 import { routes } from '../../app.routes';
 import { NavbarComponent } from '../../shared/components/navbar/navbar.component';
-import { Navbar } from '../../shared/Models/navbar.model';
+import { Navbar } from '../../shared/models/navbar.model';
 
 @Component({
   selector: 'app-nihongo',
@@ -14,10 +14,10 @@ import { Navbar } from '../../shared/Models/navbar.model';
 })
 export default class NihongoComponent {
   config: Navbar = {
-    title: "Nihongo",
+    title: "日本語",
     return: true,
     routes: [{
-      text: "Kanjis",
+      text: "漢字",
       value: "kanjis"
     }, {
       text: "Verbos",

@@ -72,18 +72,24 @@ body {
   margin-right: 5px;
   margin-top: 5px;
   padding: 1px 5px;
+  border: none;
+  text-decoration: none;
+  outline: none;
+  cursor: pointer;
+  width: fit-content;
+  display: inline-flex;
 }
 
 .pointer {
   cursor: pointer;
 }
 
-.newTag {
-  background-color: $gray;
-  color: $gray-light;
-  border-radius: 10px;
-  margin-right: 5px;
-  margin-top: 5px;
-  padding: 1px 5px;
-  border: none;
-}
+// .newTag {
+//   background-color: $gray;
+//   color: $gray-light;
+//   border-radius: 10px;
+//   margin-right: 5px;
+//   margin-top: 5px;
+//   padding: 1px 5px;
+//   border: none;
+// }

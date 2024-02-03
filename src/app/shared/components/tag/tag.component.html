@@ -1,9 +1,13 @@
-@for (tag of data; track $index) {
-  <label class="tag">{{ tag.value }}</label>
+@for (tag of configuration.data; track tag.id) {
+  <div class="tag" (click)="delete(tag.id)">{{ tag.value }}</div>
+} @if (showInput) {
+  <input #new type="text" class="tag" (keyup.enter)="save(new.value)" />
 }
 
-@if (showInput) {
-  <input type="text" class="newTag" [(ngModel)]="newTag" (enter)="save()"/>
-}
-
-<label class="tag bg-success pointer" (click)="showInput = !showInput">+</label>
+<button
+  class="tag pointer"
+  [ngClass]="{ 'bg-success': !showInput, 'bg-danger': showInput }"
+  (click)="showInput = !showInput;"
+>
+  {{ showInput ? "x" : "+" }}
+</button>

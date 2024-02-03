@@ -1,14 +1,23 @@
-<div class="card">
+<!-- <div class="card">
+  <div class="card-body">
+    <div class="d-flex justify-content-between">
+      <button class="btn btn-secondary" [routerLink]="['/', 'nihongo', 'kanjis']">Atras</button>
+      <button class="btn btn-secondary" [routerLink]="['/', 'nihongo', 'kanjis']">Kanjis</button>
+    </div>
+  </div>
+</div> -->
+
+<div class="card mt-3" *ngIf="kanji">
   <div class="card-body">
     <div class="row g-2">
       <div class="kanji-container col-3">
-        <img [src]="kanji.image" alt="" />
+        <img [src]="kanji.image" />
       </div>
       <div class="col-9">
         <h1 style="font-weight: bold">
-          @for (name of kanji.names; track kanji.id) {
+          @for (name of kanji.names; track name.id) {
             <label>{{name.value}}</label>
-            @if (kanji.names && kanji.names.length > $index + 1 ) {
+            @if (kanji.names && kanji.names!.length > $index + 1 ) {
               <label>, </label>
             }
           }
@@ -18,13 +27,11 @@
           <div class="col-6">
             <p>
               <label class="me-1" style="font-weight: bold">Kun:</label>
-              <tag [data]="kanji.kun"></tag>
+              <tag [configuration]="kunConfig"></tag>
             </p>
             <p>
               <label class="me-1" style="font-weight: bold">On:</label>
-              @for (on of kanji.on; track $index) {
-                <label class="tag">{{on.value}}</label>
-              }
+              <tag [configuration]="onConfig"></tag>
             </p>
             <!-- <p>
               <label class="me-1" style="font-weight: bold">Significado:</label>

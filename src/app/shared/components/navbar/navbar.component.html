@@ -13,7 +13,7 @@
         </li>
         @for (route of config.routes; track $index) {
           <li class="nav-item">
-            <a class="nav-link" [routerLink]="route.value" routerLinkActive="active">{{route.text}}</a>
+            <a class="nav-link" [routerLink]="route.value" routerLinkActive="active" [title]="route.value">{{route.text}}</a>
           </li>
         }
       </ul>
