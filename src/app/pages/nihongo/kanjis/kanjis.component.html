@@ -1,3 +1,7 @@
+<button class="btn btn-secondary">
+  <i class="fa-solid fa-plus"></i>
+</button>
+
 @for (kanji of kanjis(); track kanji.id) {
-  <a class="tag pointer fs-1" [routerLink]="['..', 'kanji', kanji.id]">{{kanji.char}}</a>
+<a class="tag pointer fs-1" [routerLink]="['..', 'kanji', kanji.id]">{{kanji.char}}</a>
 }

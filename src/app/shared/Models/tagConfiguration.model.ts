@@ -1,7 +1,7 @@
-import { Generic } from './generic.model';
-import { KanjiGeneric } from './kanji.model';
+import { Generic } from '@models/generic.model';
+import { KanjiGeneric } from '@models/kanji.model';
 
-export type TagConfiguration = {
+export interface TagConfiguration {
   parentId: number;
   controllerUrl?: string;
   data?: Generic[];

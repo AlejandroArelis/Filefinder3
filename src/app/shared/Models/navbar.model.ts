@@ -1,6 +1,6 @@
-import { Route } from "./route.model";
+import { Route } from "@models/route.model";
 
-export type Navbar = {
+export interface Navbar {
   title: string;
   return: boolean;
   routes: Route[];

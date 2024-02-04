@@ -12,6 +12,9 @@ export const routes: Routes = [
             path: "kanjis",
             loadComponent: () => import("./pages/nihongo/kanjis/kanjis.component")
         }, {
+            path: "kanji",
+            loadComponent: () => import("./pages/nihongo/kanjis/detail/detail.component")
+        }, {
             path: "kanji/:id",
             loadComponent: () => import("./pages/nihongo/kanjis/detail/detail.component")
         }, {

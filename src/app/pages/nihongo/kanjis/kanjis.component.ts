@@ -1,7 +1,6 @@
 import { Component, Signal, inject } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { RouterLink } from '@angular/router';
-import { AsyncPipe, JsonPipe } from '@angular/common';
 import { KanjiService } from '@services/nihongo/kanji/kanji.service';
 import { Kanji } from '@models/kanji.model';
 

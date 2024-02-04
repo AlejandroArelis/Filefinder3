@@ -1,4 +1,4 @@
-export type Char = {
+export interface Char {
     id: number;
     text: string;
     special: boolean;

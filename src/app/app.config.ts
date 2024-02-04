@@ -13,6 +13,7 @@ export const appConfig: ApplicationConfig = {
   providers: [
     provideRouter(routes, withComponentInputBinding(), withViewTransitions()),
     provideAnimations(),
-    provideHttpClient()
-  ],
+    provideHttpClient(),
+    provideAnimations()
+],
 };

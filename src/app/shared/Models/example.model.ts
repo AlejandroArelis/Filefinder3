@@ -1,7 +1,6 @@
-import { Char } from "./char.model";
-import { Generic } from "./generic.model";
+import { Generic } from "@models/generic.model";
 
-export type Example = {
+export interface Example {
   id: number;
   name: string;
   value: string | number;

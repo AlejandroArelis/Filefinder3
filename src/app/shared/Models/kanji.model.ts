@@ -1,10 +1,11 @@
-import { Generic } from './generic.model';
-import { Example } from './example.model';
+import { Example } from "@models/example.model";
+import { Generic } from "@models/generic.model";
+
 
 export interface Kanji {
   id: number;
   char: string;
-  image?: string;
+  image?: string | File;
   jlpt?: number;
   checked?: boolean;
   successes?: number;

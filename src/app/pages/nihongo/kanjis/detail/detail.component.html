@@ -7,21 +7,32 @@
   </div>
 </div> -->
 
-<div class="card mt-3" *ngIf="kanji">
+<div class="card mt-3">
   <div class="card-body">
     <div class="row g-2">
       <div class="kanji-container col-3">
-        <img [src]="kanji.image" />
+
+        @if (kanji) {
+          <img [src]="kanji.image" />
+        } @else {
+            <input type="file" class="form-control" id="floatingInput" (change)="fileSelected($event)" accept="image/png, image/jpeg" data-bs-theme="dark">
+
+        }
       </div>
       <div class="col-9">
-        <h1 style="font-weight: bold">
-          @for (name of kanji.names; track name.id) {
-            <label>{{name.value}}</label>
-            @if (kanji.names && kanji.names!.length > $index + 1 ) {
-              <label>, </label>
+        @if (kanji) {
+          <h1 style="font-weight: bold">
+            @for (name of kanji.names; track name.id) {
+              <label>{{name.value}}</label>
+              @if (kanji.names && kanji.names!.length > $index + 1 ) {
+                <label>, </label>
+              }
             }
-          }
-        </h1>
+          </h1>
+        } @else {
+          <tag [configuration]="nameConfig"></tag>
+        }
+
         <hr />
         <div class="row g-2">
           <div class="col-6">

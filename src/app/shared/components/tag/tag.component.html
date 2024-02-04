@@ -1,8 +1,12 @@
 @for (tag of configuration.data; track tag.id) {
   <div class="tag" (click)="delete(tag.id)">{{ tag.value }}</div>
-} @if (showInput) {
+} @empty {
+  <label>Sin registros</label>
+}
+@if (showInput) {
   <input #new type="text" class="tag" (keyup.enter)="save(new.value)" />
 }
+
 
 <button
   class="tag pointer"
