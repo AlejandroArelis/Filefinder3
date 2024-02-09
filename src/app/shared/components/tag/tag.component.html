@@ -1,17 +1,23 @@
-@for (tag of configuration.data; track tag.id) {
-  <div class="tag" (click)="delete(tag.id)">{{ tag.value }}</div>
-} @empty {
-  <label>Sin registros</label>
-}
-@if (showInput) {
-  <input #new type="text" class="tag" (keyup.enter)="save(new.value)" />
-}
+<p>
+  @if (configuration.title) {
+    <label class="me-1" style="font-weight: bold">{{configuration.title}}:</label>
+  }
+
+  @for (tag of configuration.data; track tag.value) {
+    <div class="tag" (click)="delete(tag)">{{ tag.value }}</div>
+  } @empty {
+    <label class="me-1">Sin registros</label>
+  }
+  @if (showInput) {
+    <input #new type="text" class="tag" (keyup.enter)="save(new.value)" />
+  }
 
 
-<button
-  class="tag pointer"
-  [ngClass]="{ 'bg-success': !showInput, 'bg-danger': showInput }"
-  (click)="showInput = !showInput;"
->
-  {{ showInput ? "x" : "+" }}
-</button>
+  <button
+    class="tag pointer"
+    [ngClass]="{ 'bg-success': !showInput, 'bg-danger': showInput }"
+    (click)="showInput = !showInput;"
+  >
+    {{ showInput ? "x" : "+" }}
+  </button>
+</p>

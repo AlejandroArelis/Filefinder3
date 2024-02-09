@@ -1,4 +1,4 @@
 export interface Route {
-  text: string;
-  value: string;
+  text?: string;
+  value?: string;
 }

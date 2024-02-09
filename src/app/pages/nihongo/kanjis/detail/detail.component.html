@@ -12,44 +12,22 @@
     <div class="row g-2">
       <div class="kanji-container col-3">
 
-        @if (kanji) {
+        @if (kanji.id) {
           <img [src]="kanji.image" />
         } @else {
-            <input type="file" class="form-control" id="floatingInput" (change)="fileSelected($event)" accept="image/png, image/jpeg" data-bs-theme="dark">
-
+          <input type="file" class="form-control" id="floatingInput" (change)="fileSelected($event)" accept="image/png, image/jpeg" data-bs-theme="dark">
         }
       </div>
       <div class="col-9">
-        @if (kanji) {
-          <h1 style="font-weight: bold">
-            @for (name of kanji.names; track name.id) {
-              <label>{{name.value}}</label>
-              @if (kanji.names && kanji.names!.length > $index + 1 ) {
-                <label>, </label>
-              }
-            }
-          </h1>
-        } @else {
-          <tag [configuration]="nameConfig"></tag>
-        }
+
+        <tag [configuration]="nameConfig"></tag>
 
         <hr />
         <div class="row g-2">
           <div class="col-6">
-            <p>
-              <label class="me-1" style="font-weight: bold">Kun:</label>
-              <tag [configuration]="kunConfig"></tag>
-            </p>
-            <p>
-              <label class="me-1" style="font-weight: bold">On:</label>
-              <tag [configuration]="onConfig"></tag>
-            </p>
-            <!-- <p>
-              <label class="me-1" style="font-weight: bold">Significado:</label>
-              @for (meaning of kanji.meanings; track $index) {
-                <label class="tag">{{meaning}}</label>
-              }
-            </p> -->
+            <tag [configuration]="kunConfig"></tag>
+            <tag [configuration]="onConfig"></tag>
+            <tag [configuration]="meaningConfig"></tag>
           </div>
           <!-- <div class="col-6">
             <label style="font-weight: bold">Ejemplos:</label>
@@ -73,3 +51,6 @@
     </div>
   </div>
 </div>
+
+
+<pre>{{kanji|json}}</pre>

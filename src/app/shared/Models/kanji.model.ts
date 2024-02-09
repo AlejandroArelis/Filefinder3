@@ -3,8 +3,8 @@ import { Generic } from "@models/generic.model";
 
 
 export interface Kanji {
-  id: number;
-  char: string;
+  id?: number;
+  char?: string;
   image?: string | File;
   jlpt?: number;
   checked?: boolean;
