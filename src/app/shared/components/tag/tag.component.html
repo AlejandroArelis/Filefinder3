@@ -1,23 +1,42 @@
-<p>
+<div class="row g-2 d-flex align-items-center mb-2">
   @if (configuration.title) {
-    <label class="me-1" style="font-weight: bold">{{configuration.title}}:</label>
+    <div class="col-auto">
+      <label style="font-weight: bold">{{configuration.title}}:</label>
+    </div>
   }
 
   @for (tag of configuration.data; track tag.value) {
-    <div class="tag" (click)="delete(tag)">{{ tag.value }}</div>
-  } @empty {
-    <label class="me-1">Sin registros</label>
+    <div class="col-auto">
+      <div class="tag" (click)="delete(tag)">{{ tag.text }}</div>
+    </div>
   }
-  @if (showInput) {
-    <input #new type="text" class="tag" (keyup.enter)="save(new.value)" />
-  }
+  <!-- @empty {
+    @if (!showInput) {
+      <div class="col-auto">
+        <label>Sin registros</label>
+      </div>
+    }
+  } -->
 
-
-  <button
-    class="tag pointer"
-    [ngClass]="{ 'bg-success': !showInput, 'bg-danger': showInput }"
-    (click)="showInput = !showInput;"
-  >
-    {{ showInput ? "x" : "+" }}
-  </button>
-</p>
+  <div class="col-auto" data-bs-theme="dark">
+    @if (showInput) {
+      <div class="input-group input-group-sm">
+        @if (configuration.generic) {
+          <span class="input-group-text" >Texto</span>
+        }
+        <input type="text" class="form-control" [(ngModel)]="genericValue.text" (keyup.enter)="save()">
+        @if (configuration.generic) {
+          <span class="input-group-text">Valor</span>
+          <input type="text" class="form-control" [(ngModel)]="genericValue.value" (keyup.enter)="save()">
+        }
+        <button class="btn btn-danger input-group-text btn-sm" (click)="showInput = false">
+          <i class="fa-solid fa-xmark"></i>
+        </button >
+      </div>
+    } @else {
+      <button class="btn btn-success btn-sm" (click)="showInput = true">
+        <i class="fa-solid fa-plus"></i>
+      </button>
+    }
+  </div>
+</div>

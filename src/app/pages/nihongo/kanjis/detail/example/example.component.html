@@ -1,0 +1,22 @@
+<div class="p-2 bg-container" data-bs-theme="dark">
+  <h1>Nuevo ejemplo</h1>
+
+  <hr>
+  
+  <div class="input-group input-group-sm mb-2">
+    <span class="input-group-text">Texto</span>
+    <input type="text" class="form-control" [(ngModel)]="example.text">
+    <span class="input-group-text">Valor</span>
+    <input type="text" class="form-control" [(ngModel)]="example.value">
+  </div>
+
+  <tag [configuration]="meaningsConfig"></tag>
+  <tag [configuration]="charsConfig"></tag>
+
+  <hr>
+
+  <div class="d-flex justify-content-between">
+    <button class="btn btn-danger btn-sm" mat-dialog-close>Cancelar</button>
+    <button class="btn btn-success btn-sm" [mat-dialog-close]="example" cdkFocusInitial>Guardar</button>
+  </div>
+</div>

@@ -5,7 +5,7 @@ import { Generic } from "@models/generic.model";
 export interface Kanji {
   id?: number;
   char?: string;
-  image?: string | File;
+  image?: string;
   jlpt?: number;
   checked?: boolean;
   successes?: number;

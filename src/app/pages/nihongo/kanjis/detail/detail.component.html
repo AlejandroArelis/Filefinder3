@@ -1,35 +1,56 @@
-<!-- <div class="card">
-  <div class="card-body">
-    <div class="d-flex justify-content-between">
-      <button class="btn btn-secondary" [routerLink]="['/', 'nihongo', 'kanjis']">Atras</button>
-      <button class="btn btn-secondary" [routerLink]="['/', 'nihongo', 'kanjis']">Kanjis</button>
-    </div>
-  </div>
-</div> -->
-
 <div class="card mt-3">
   <div class="card-body">
     <div class="row g-2">
       <div class="kanji-container col-3">
-
-        @if (kanji.id) {
-          <img [src]="kanji.image" />
-        } @else {
-          <input type="file" class="form-control" id="floatingInput" (change)="fileSelected($event)" accept="image/png, image/jpeg" data-bs-theme="dark">
-        }
+        <img [src]="kanji.image" />
       </div>
       <div class="col-9">
-
         <tag [configuration]="nameConfig"></tag>
-
         <hr />
-        <div class="row g-2">
+        <div class="row">
           <div class="col-6">
+            <div class="input-group input-group-sm mb-2" data-bs-theme="dark">
+              <span class="input-group-text">Imagen</span>
+              <input #image type="text" class="form-control" (keyup.enter)="saveImage(image.value)">
+              <button class="btn btn-danger input-group-text" (click)="saveImage(image.value)">
+                <i class="fa-solid fa-upload"></i>
+              </button >
+            </div>
             <tag [configuration]="kunConfig"></tag>
             <tag [configuration]="onConfig"></tag>
             <tag [configuration]="meaningConfig"></tag>
           </div>
-          <!-- <div class="col-6">
+          <div class="col-6">
+            <div class="d-flex justify-content-between align-items-center">
+              <label style="font-weight: bold">Ejemplos</label>
+              <button class="btn btn-success btn-sm" (click)="openDialog()">
+                <i class="fa-solid fa-plus"></i>
+              </button>
+            </div>
+            <hr>
+
+            <ul>
+              @for (example of kanji.examples; track example.value) {
+                <li>
+                  <div class="row g-2 align-items-center">
+                    @for (char of example.chars; track char.value) {
+                      <div class="col-auto p-0">
+                        <char [char]="char"></char>
+                      </div>
+                    }:
+                    @for (meaning of example.meanings; track $index) {
+                      <div class="col-auto">
+                        <label class="tag" (click)="openDialog(example)">{{meaning.text}}</label>
+                      </div>
+                    }
+                  </div>
+                </li>
+              }
+            </ul>
+          </div>
+        </div>
+
+        <!-- <div class="col-6">
             <label style="font-weight: bold">Ejemplos:</label>
             <ul>
               @for (word of kanji.examples; track word.id) {
@@ -46,11 +67,11 @@
               }
             </ul>
           </div> -->
-        </div>
       </div>
     </div>
   </div>
 </div>
 
+<button class="btn btn-success" (click)="save()">guardar</button>
 
 <pre>{{kanji|json}}</pre>

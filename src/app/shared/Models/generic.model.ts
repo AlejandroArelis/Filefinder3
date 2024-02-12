@@ -1,5 +1,5 @@
 export interface Generic {
   id?: number;
-  name?: string;
+  text?: string;
   value?: string | number;
 };

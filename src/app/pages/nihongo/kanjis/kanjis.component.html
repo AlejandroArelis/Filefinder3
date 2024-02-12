@@ -1,6 +1,6 @@
-<button class="btn btn-secondary">
-  <i class="fa-solid fa-plus" routerLink="kanji"></i>
-</button>
+<a class="btn btn-secondary" routerLink="../kanji">
+  <i class="fa-solid fa-plus"></i>
+</a>
 
 @for (kanji of kanjis(); track kanji.id) {
 <a class="tag pointer fs-1" [routerLink]="['..', 'kanji', kanji.id]">{{kanji.char}}</a>

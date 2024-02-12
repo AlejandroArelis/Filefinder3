@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Char } from '../../models/char.model';
+import { Generic } from '@models/generic.model';
 
 @Component({
   selector: 'char',
@@ -9,7 +9,7 @@ import { Char } from '../../models/char.model';
   templateUrl: './char.component.html',
 })
 export class CharComponent {
-  @Input() char!: Char;
+  @Input() char!: Generic;
 
   kana = false;
 }

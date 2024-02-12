@@ -8,4 +8,7 @@ export interface TagConfiguration {
   data?: Generic[];
   actual?: KanjiGeneric;
   title?: string;
-};
+  examples?: boolean;
+  generic?: boolean;
+  repeat?: boolean;
+}

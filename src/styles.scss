@@ -48,7 +48,7 @@ body {
   color: $text !important;
 }
 
-.card {
+.bg-container, .card, .mat-mdc-dialog-container .mdc-dialog__surface {
   background-color: $black-container !important;
   color: $text !important;
 }
@@ -70,15 +70,15 @@ body {
 .tag {
   background-color: $gray;
   color: $gray-light;
-  border-radius: 10px;
-  margin-right: 5px;
-  margin-top: 5px;
-  padding: 1px 5px;
+  border-radius: 5px;
+  // margin-right: 3px;
+  // margin-top: 5px;
+  padding: 5px 10px;
   border: none;
   text-decoration: none;
   outline: none;
   cursor: pointer;
-  width: fit-content;
+  // width: fit-content;
   display: inline-flex;
 }
 
@@ -95,5 +95,11 @@ body {
 //   padding: 1px 5px;
 //   border: none;
 // }
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+hr {
+  margin: .5rem 0 !important;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+  margin: 0 !important;
+}

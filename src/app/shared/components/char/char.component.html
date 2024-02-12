@@ -1,6 +1,6 @@
 
-@if (kana && char.special) {
-  <label class="fw-bold" (mouseleave)="kana = false" [ngClass]="{'pointer': char.special}">{{char.value}}</label>
+@if (kana) {
+  <label class="fw-bold" (mouseleave)="kana = false" (mouseenter)="kana = true">{{char.value}}</label>
 } @else {
-  <label (mouseenter)="kana = true;" [ngClass]="{'pointer': char.special}">{{char.text}}</label>
+  <label (mouseenter)="kana = true;" (mouseleave)="kana = false">{{char.text}}</label>
 }
