@@ -25,6 +25,7 @@ export class TagComponent {
   async save() {
     try {
       this.showInput = false;
+
       if(!this.configuration.repeat) {
         let exist = this.configuration.data?.some((item) => item.text == this.genericValue.text);
 
@@ -34,6 +35,7 @@ export class TagComponent {
       }
       
       if (this.configuration.parentId) {
+        console.log("que raro");
         this.configuration.actual = {
           kanjiId: this.configuration.parentId,
           value: this.configuration.generic ? this.genericValue.value : this.genericValue.text,
@@ -44,6 +46,7 @@ export class TagComponent {
           await firstValueFrom(this._genericService.post(this.configuration))
         );
       } else {
+        console.log("debe entrar aquí");
         this.configuration.data?.push({
           value: this.configuration.generic ? this.genericValue.value : this.genericValue.text,
           text: this.genericValue.text

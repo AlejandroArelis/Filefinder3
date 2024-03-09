@@ -118,9 +118,8 @@ export default class DetailComponent implements OnInit {
   }
 
   async openDialog(example?:Example) {
-    console.log("detail", example);
     const dialog = this._dialog.open(ExampleComponent, {
-      data: {example}
+      data: example
     });
 
     this.kanji.examples?.push(await firstValueFrom(dialog.afterClosed()));
